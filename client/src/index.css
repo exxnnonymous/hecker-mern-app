@@ -1,0 +1,117 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply mx-auto;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.app {
+  background-color: #f0f2f5;
+  min-height: calc(100vh);
+}
+
+.nav-item {
+  @apply font-semibold text-lg tracking-wide font-raleway;
+}
+
+.post-card {
+  @apply py-2 px-3 shadow-md rounded-md;
+}
+
+.modal {
+  box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.text-area-style {
+  width: 100%;
+  min-height: 80px;
+  max-height: 180px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  resize: none;
+}
+.image-text-area-style {
+  width: 100%;
+  min-height: 40px;
+  height: auto;
+  resize: none;
+  overflow-x: hidden;
+}
+
+.text-area-style[placeholder]:empty:before {
+  content: attr(placeholder);
+  color: #555;
+}
+
+.text-area-style[placeholder]:empty:focus::before {
+  /* content: ""; */
+}
+
+.drop-setting-list {
+  @apply flex items-center gap-4 dark:hover:bg-darkListBg hover:bg-primary  cursor-pointer py-2 px-2 rounded-md;
+}
+
+.radio-container {
+}
+.post-image-class{
+  max-height: 410px;
+}
+
+.radio-container label {
+  cursor: pointer;
+  font-weight: 500;
+}
+.radio-container label::after {
+  content: "";
+  border: 1px solid #b0b3b8;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  transition: all 0.1s;
+}
+
+.radio-container label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #2563eb;
+  top: 50%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  right: 24.5px;
+  opacity: 0;
+  transition: all 0.1s;
+}
+
+.radio-container label.active::before {
+  opacity: 1;
+}
+.radio-container label.active::after {
+  border: 2px solid #2563eb;
+}
+
+#dropsetting {
+  min-height: 100vh;
+  top: 0;
+  padding-top: 58px;
+}
+
+.setting {
+  position: relative;
+  z-index: 100;
+}
